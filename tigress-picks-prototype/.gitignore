@@ -1,0 +1,14 @@
+node_modules
+dist
+dist-ssr
+*.local
+.vscode
+.idea
+.DS_Store
+*.log
+.vercel
+
+# Environment files (contain real values; .env.example is the template).
+.env
+.env.*
+!.env.example

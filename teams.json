@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "name": "Mexico",
+    "fifa_code": "MEX",
+    "group": "A",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 14,
+    "fifa_rank_seed": 14
+  },
+  {
+    "id": 2,
+    "name": "South Africa",
+    "fifa_code": "RSA",
+    "group": "A",
+    "group_position": 2,
+    "pot": 3,
+    "seed": 40,
+    "fifa_rank_seed": 40
+  },
+  {
+    "id": 3,
+    "name": "South Korea",
+    "fifa_code": "KOR",
+    "group": "A",
+    "group_position": 3,
+    "pot": 2,
+    "seed": 23,
+    "fifa_rank_seed": 23
+  },
+  {
+    "id": 4,
+    "name": "Czechia",
+    "fifa_code": "CZE",
+    "group": "A",
+    "group_position": 4,
+    "pot": 4,
+    "seed": 33,
+    "fifa_rank_seed": 33
+  },
+  {
+    "id": 5,
+    "name": "Canada",
+    "fifa_code": "CAN",
+    "group": "B",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 27,
+    "fifa_rank_seed": 27
+  },
+  {
+    "id": 6,
+    "name": "Bosnia and Herzegovina",
+    "fifa_code": "BIH",
+    "group": "B",
+    "group_position": 2,
+    "pot": 4,
+    "seed": 43,
+    "fifa_rank_seed": 43
+  },
+  {
+    "id": 7,
+    "name": "Qatar",
+    "fifa_code": "QAT",
+    "group": "B",
+    "group_position": 3,
+    "pot": 3,
+    "seed": 38,
+    "fifa_rank_seed": 38
+  },
+  {
+    "id": 8,
+    "name": "Switzerland",
+    "fifa_code": "SUI",
+    "group": "B",
+    "group_position": 4,
+    "pot": 2,
+    "seed": 18,
+    "fifa_rank_seed": 18
+  },
+  {
+    "id": 9,
+    "name": "Brazil",
+    "fifa_code": "BRA",
+    "group": "C",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 6,
+    "fifa_rank_seed": 6
+  },
+  {
+    "id": 10,
+    "name": "Morocco",
+    "fifa_code": "MAR",
+    "group": "C",
+    "group_position": 2,
+    "pot": 2,
+    "seed": 8,
+    "fifa_rank_seed": 8
+  },
+  {
+    "id": 11,
+    "name": "Haiti",
+    "fifa_code": "HAI",
+    "group": "C",
+    "group_position": 3,
+    "pot": 4,
+    "seed": 45,
+    "fifa_rank_seed": 45
+  },
+  {
+    "id": 12,
+    "name": "Scotland",
+    "fifa_code": "SCO",
+    "group": "C",
+    "group_position": 4,
+    "pot": 3,
+    "seed": 34,
+    "fifa_rank_seed": 34
+  },
+  {
+    "id": 13,
+    "name": "USA",
+    "fifa_code": "USA",
+    "group": "D",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 15,
+    "fifa_rank_seed": 15
+  },
+  {
+    "id": 14,
+    "name": "Paraguay",
+    "fifa_code": "PAR",
+    "group": "D",
+    "group_position": 2,
+    "pot": 3,
+    "seed": 32,
+    "fifa_rank_seed": 32
+  },
+  {
+    "id": 15,
+    "name": "Australia",
+    "fifa_code": "AUS",
+    "group": "D",
+    "group_position": 3,
+    "pot": 2,
+    "seed": 24,
+    "fifa_rank_seed": 24
+  },
+  {
+    "id": 16,
+    "name": "Türkiye",
+    "fifa_code": "TUR",
+    "group": "D",
+    "group_position": 4,
+    "pot": 4,
+    "seed": 20,
+    "fifa_rank_seed": 20
+  },
+  {
+    "id": 17,
+    "name": "Germany",
+    "fifa_code": "GER",
+    "group": "E",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 10,
+    "fifa_rank_seed": 10
+  },
+  {
+    "id": 18,
+    "name": "Curaçao",
+    "fifa_code": "CUW",
+    "group": "E",
+    "group_position": 2,
+    "pot": 4,
+    "seed": 47,
+    "fifa_rank_seed": 47
+  },
+  {
+    "id": 19,
+    "name": "Ivory Coast",
+    "fifa_code": "CIV",
+    "group": "E",
+    "group_position": 3,
+    "pot": 3,
+    "seed": 30,
+    "fifa_rank_seed": 30
+  },
+  {
+    "id": 20,
+    "name": "Ecuador",
+    "fifa_code": "ECU",
+    "group": "E",
+    "group_position": 4,
+    "pot": 2,
+    "seed": 21,
+    "fifa_rank_seed": 21
+  },
+  {
+    "id": 21,
+    "name": "Netherlands",
+    "fifa_code": "NED",
+    "group": "F",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 7,
+    "fifa_rank_seed": 7
+  },
+  {
+    "id": 22,
+    "name": "Japan",
+    "fifa_code": "JPN",
+    "group": "F",
+    "group_position": 2,
+    "pot": 2,
+    "seed": 17,
+    "fifa_rank_seed": 17
+  },
+  {
+    "id": 23,
+    "name": "Sweden",
+    "fifa_code": "SWE",
+    "group": "F",
+    "group_position": 3,
+    "pot": 4,
+    "seed": 31,
+    "fifa_rank_seed": 31
+  },
+  {
+    "id": 24,
+    "name": "Tunisia",
+    "fifa_code": "TUN",
+    "group": "F",
+    "group_position": 4,
+    "pot": 3,
+    "seed": 35,
+    "fifa_rank_seed": 35
+  },
+  {
+    "id": 25,
+    "name": "Belgium",
+    "fifa_code": "BEL",
+    "group": "G",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 9,
+    "fifa_rank_seed": 9
+  },
+  {
+    "id": 26,
+    "name": "Egypt",
+    "fifa_code": "EGY",
+    "group": "G",
+    "group_position": 2,
+    "pot": 3,
+    "seed": 25,
+    "fifa_rank_seed": 25
+  },
+  {
+    "id": 27,
+    "name": "Iran",
+    "fifa_code": "IRN",
+    "group": "G",
+    "group_position": 3,
+    "pot": 2,
+    "seed": 19,
+    "fifa_rank_seed": 19
+  },
+  {
+    "id": 28,
+    "name": "New Zealand",
+    "fifa_code": "NZL",
+    "group": "G",
+    "group_position": 4,
+    "pot": 4,
+    "seed": 46,
+    "fifa_rank_seed": 46
+  },
+  {
+    "id": 29,
+    "name": "Spain",
+    "fifa_code": "ESP",
+    "group": "H",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 2,
+    "fifa_rank_seed": 2
+  },
+  {
+    "id": 30,
+    "name": "Cape Verde",
+    "fifa_code": "CPV",
+    "group": "H",
+    "group_position": 2,
+    "pot": 4,
+    "seed": 44,
+    "fifa_rank_seed": 44
+  },
+  {
+    "id": 31,
+    "name": "Saudi Arabia",
+    "fifa_code": "KSA",
+    "group": "H",
+    "group_position": 3,
+    "pot": 3,
+    "seed": 41,
+    "fifa_rank_seed": 41
+  },
+  {
+    "id": 32,
+    "name": "Uruguay",
+    "fifa_code": "URU",
+    "group": "H",
+    "group_position": 4,
+    "pot": 2,
+    "seed": 16,
+    "fifa_rank_seed": 16
+  },
+  {
+    "id": 33,
+    "name": "France",
+    "fifa_code": "FRA",
+    "group": "I",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 1,
+    "fifa_rank_seed": 1
+  },
+  {
+    "id": 34,
+    "name": "Senegal",
+    "fifa_code": "SEN",
+    "group": "I",
+    "group_position": 2,
+    "pot": 2,
+    "seed": 13,
+    "fifa_rank_seed": 13
+  },
+  {
+    "id": 35,
+    "name": "Iraq",
+    "fifa_code": "IRQ",
+    "group": "I",
+    "group_position": 3,
+    "pot": 4,
+    "seed": 39,
+    "fifa_rank_seed": 39
+  },
+  {
+    "id": 36,
+    "name": "Norway",
+    "fifa_code": "NOR",
+    "group": "I",
+    "group_position": 4,
+    "pot": 3,
+    "seed": 28,
+    "fifa_rank_seed": 28
+  },
+  {
+    "id": 37,
+    "name": "Argentina",
+    "fifa_code": "ARG",
+    "group": "J",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 3,
+    "fifa_rank_seed": 3
+  },
+  {
+    "id": 38,
+    "name": "Algeria",
+    "fifa_code": "ALG",
+    "group": "J",
+    "group_position": 2,
+    "pot": 3,
+    "seed": 26,
+    "fifa_rank_seed": 26
+  },
+  {
+    "id": 39,
+    "name": "Austria",
+    "fifa_code": "AUT",
+    "group": "J",
+    "group_position": 3,
+    "pot": 2,
+    "seed": 22,
+    "fifa_rank_seed": 22
+  },
+  {
+    "id": 40,
+    "name": "Jordan",
+    "fifa_code": "JOR",
+    "group": "J",
+    "group_position": 4,
+    "pot": 4,
+    "seed": 42,
+    "fifa_rank_seed": 42
+  },
+  {
+    "id": 41,
+    "name": "Portugal",
+    "fifa_code": "POR",
+    "group": "K",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 5,
+    "fifa_rank_seed": 5
+  },
+  {
+    "id": 42,
+    "name": "DR Congo",
+    "fifa_code": "COD",
+    "group": "K",
+    "group_position": 2,
+    "pot": 4,
+    "seed": 36,
+    "fifa_rank_seed": 36
+  },
+  {
+    "id": 43,
+    "name": "Uzbekistan",
+    "fifa_code": "UZB",
+    "group": "K",
+    "group_position": 3,
+    "pot": 3,
+    "seed": 37,
+    "fifa_rank_seed": 37
+  },
+  {
+    "id": 44,
+    "name": "Colombia",
+    "fifa_code": "COL",
+    "group": "K",
+    "group_position": 4,
+    "pot": 2,
+    "seed": 12,
+    "fifa_rank_seed": 12
+  },
+  {
+    "id": 45,
+    "name": "England",
+    "fifa_code": "ENG",
+    "group": "L",
+    "group_position": 1,
+    "pot": 1,
+    "seed": 4,
+    "fifa_rank_seed": 4
+  },
+  {
+    "id": 46,
+    "name": "Croatia",
+    "fifa_code": "CRO",
+    "group": "L",
+    "group_position": 2,
+    "pot": 2,
+    "seed": 11,
+    "fifa_rank_seed": 11
+  },
+  {
+    "id": 47,
+    "name": "Ghana",
+    "fifa_code": "GHA",
+    "group": "L",
+    "group_position": 3,
+    "pot": 4,
+    "seed": 48,
+    "fifa_rank_seed": 48
+  },
+  {
+    "id": 48,
+    "name": "Panama",
+    "fifa_code": "PAN",
+    "group": "L",
+    "group_position": 4,
+    "pot": 3,
+    "seed": 29,
+    "fifa_rank_seed": 29
+  }
+]

@@ -1,0 +1,36 @@
+# Monorepo root .gitignore.
+# Each subproject (api-usa, tigress-picks-prototype) also has its own
+# .gitignore. This file is a belt-and-braces guard so secrets, builds, and
+# OS noise can never accidentally land in a commit run from the repo root.
+
+# Dependencies
+**/node_modules/
+
+# Build output
+**/dist/
+**/build/
+**/dist-ssr/
+**/.tsbuildinfo
+**/*.tsbuildinfo
+
+# Environment files — secrets. .env.example is the only checked-in template.
+**/.env
+**/.env.*
+!**/.env.example
+
+# Editor / OS noise
+.vscode/
+.idea/
+.history/
+.DS_Store
+*.log
+
+# Vercel local state
+.vercel/
+
+# Personal scratch files / external upstreams that shouldn't ship.
+# worldcup2026-iran/ is the rezarahiminia/worldcup2026 upstream — used as a
+# reference for real WC2026 fixture data, not our code.
+abandoned/
+worldcup-picks/
+worldcup2026-iran/
