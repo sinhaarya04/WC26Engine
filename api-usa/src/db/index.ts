@@ -3,17 +3,20 @@ import { config } from "../config/env";
 
 mongoose.set("strictQuery", false);
 
-/**
- * Connect to MongoDB.
- *
- * - Reads MONGODB_URL from env (loaded via loadEnvConfig).
- * - Validates the variable is present and looks like a mongo URI before
- *   handing it to the driver — fails loudly with a helpful message
- *   naming the env var rather than leaking a malformed URL.
- * - Never logs the connection string or password. On success, logs the
- *   resolved database name only.
- */
+// Cache the connection promise on globalThis so Vercel serverless warm
+// invocations reuse the existing connection instead of opening a new one.
+declare global {
+  // eslint-disable-next-line no-var
+  var __mongooseConnection: Promise<typeof mongoose> | undefined;
+}
+
 export async function connectDb(): Promise<typeof mongoose> {
+  // Fast path: already connected (warm invocation).
+  if (mongoose.connection.readyState === 1) return mongoose;
+
+  // If a connection attempt is in flight, wait for it.
+  if (globalThis.__mongooseConnection) return globalThis.__mongooseConnection;
+
   const url = config.MONGODB_URL;
 
   if (!url || url.trim().length === 0) {
@@ -31,15 +34,21 @@ export async function connectDb(): Promise<typeof mongoose> {
 
   console.log(`🔌 Connecting to MongoDB (${config.isProd ? "Production" : "Development"})...`);
 
-  await mongoose.connect(url, {
-    serverSelectionTimeoutMS: 10000,
-    socketTimeoutMS: 45000,
-  });
+  globalThis.__mongooseConnection = mongoose
+    .connect(url, {
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+    })
+    .then((m) => {
+      console.log(`✅ connected to MongoDB (db: ${mongoose.connection.name})`);
+      return m;
+    })
+    .catch((err) => {
+      globalThis.__mongooseConnection = undefined;
+      throw err;
+    });
 
-  // mongoose.connection.name is the database name (e.g. "worldcup2026"),
-  // NOT the URL. Safe to log.
-  console.log(`✅ connected to MongoDB (db: ${mongoose.connection.name})`);
-  return mongoose;
+  return globalThis.__mongooseConnection;
 }
 
 export { mongoose };
