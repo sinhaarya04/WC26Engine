@@ -5,9 +5,8 @@
  * the api-usa backend. The JWT is persisted via lib/api.setToken() so
  * subsequent apiRequest calls send it automatically.
  *
- * register() takes a companyId picked from GET /companies?q=. No invite
- * code, no free text — the AuthView typeahead resolves to a real id
- * before submit.
+ * register() sends a companyName. The backend finds or creates the
+ * company automatically.
  */
 
 import { apiRequest, setToken } from "./api";
@@ -35,13 +34,13 @@ export async function register(
   name: string,
   email: string,
   password: string,
-  companyId: string,
+  companyName: string,
 ): Promise<AuthUser> {
   const res = await apiRequest<AuthResponse>("POST", "/auth/register", {
     name,
     email,
     password,
-    companyId,
+    companyName,
   });
   setToken(res.token);
   return res.user;

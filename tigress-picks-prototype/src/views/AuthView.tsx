@@ -1,16 +1,12 @@
 import { useState } from "react";
-import { searchCompanies, type ApiError } from "../lib/api";
+import { type ApiError } from "../lib/api";
 import { login, register, type AuthUser } from "../lib/auth";
 
 /**
  * Sign-in / register surface for unauthenticated visitors.
  *
- * Register form requires a real selected company (CompanyPicker resolves
- * the typed text to a companyId). Free-text submit is blocked with a
- * clear inline message.
- *
- * Visual language matches the rest of the prototype — light bg, white
- * card, green accent, Hanken Grotesk.
+ * Register form accepts any company name. The backend will find an
+ * existing company (case-insensitive) or create a new one automatically.
  */
 
 type Tab = "signin" | "register";
@@ -130,20 +126,7 @@ function RegisterForm({ onSignedIn }: { onSignedIn: (u: AuthUser) => void }) {
     }
     setBusy(true);
     try {
-      // Backend register requires a real companyId. We resolve the
-      // free-typed name to a seeded Company doc via the /companies search
-      // here (case-insensitive exact match preferred) so users see a
-      // plain text input, not a dropdown.
-      const matches = await searchCompanies(companyName);
-      const exact =
-        matches.find((c) => c.name.toLowerCase() === companyName.toLowerCase()) ??
-        (matches.length === 1 ? matches[0] : null);
-      if (!exact) {
-        setError("Company not found. Contact your admin if it's missing.");
-        setBusy(false);
-        return;
-      }
-      const u = await register(name.trim(), email.trim(), password, exact.id);
+      const u = await register(name.trim(), email.trim(), password, companyName);
       onSignedIn(u);
     } catch (err) {
       setError((err as ApiError).message || "Registration failed");

@@ -53,30 +53,42 @@ function buildAuthUser(
 
 export async function register(req: Request, res: Response): Promise<void> {
   // Whitelist body keys explicitly. Anything else (e.g. isAdmin) is IGNORED.
-  const { name, email, password, companyId } = req.body as {
+  const { name, email, password, companyId, companyName } = req.body as {
     name?: string;
     email?: string;
     password?: string;
     companyId?: string;
+    companyName?: string;
   };
 
-  if (!name || !email || !password || !companyId) {
-    res.status(400).send({ error: "name, email, password, and companyId are required" });
-    return;
-  }
-
-  if (!mongoose.isValidObjectId(companyId)) {
-    res.status(400).send({ error: "Unknown company" });
+  if (!name || !email || !password || (!companyId && !companyName)) {
+    res.status(400).send({ error: "name, email, password, and companyId or companyName are required" });
     return;
   }
 
   try {
-    const company = await Company.findById(companyId);
-    if (!company) {
-      // The user must resolve to a real seeded company — never create one
-      // from registration input.
-      res.status(400).send({ error: "Unknown company" });
-      return;
+    let company;
+    if (companyId) {
+      if (!mongoose.isValidObjectId(companyId)) {
+        res.status(400).send({ error: "Unknown company" });
+        return;
+      }
+      company = await Company.findById(companyId);
+      if (!company) {
+        res.status(400).send({ error: "Unknown company" });
+        return;
+      }
+    } else {
+      // Find by name (case-insensitive) or create a new company.
+      const trimmed = companyName!.trim();
+      if (!trimmed) {
+        res.status(400).send({ error: "Company name cannot be empty" });
+        return;
+      }
+      company = await Company.findOne({ name: trimmed }).collation({ locale: "en", strength: 2 });
+      if (!company) {
+        company = await Company.create({ name: trimmed });
+      }
     }
 
     const normalizedEmail = email.toLowerCase();
